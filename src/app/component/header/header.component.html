@@ -1,1 +1,15 @@
-<p>header works!</p>
+<div class="header">
+    <div class="img">
+    <img src="../../../assets/book.png" />
+    </div>
+    <div class="bloque-enlace">
+        <ul id="nav">
+            <li routerLink="/" routerLinkActive="activa" [routerLinkActiveOptions]="{exact : true}"><a>Home</a></li>
+            
+            <li routerLink="/quienes-somos" routerLinkActive="activa"><a>Conocenos</a></li>
+            
+            <li routerLinkActive="activa"><a href="#openModal" class="no-activa">Login</a></li>
+            
+        </ul>
+    </div>
+</div>

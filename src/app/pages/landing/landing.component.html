@@ -1,1 +1,8 @@
-<p>landing works!</p>
+<app-header></app-header>
+<div class="carouselContainer">
+<carousel [images]="imagesForSlider" [objectFit]="'cover'" [cellWidth]="'100%'" [height]="700" [autoplay]="false" [lightDOM]="true"
+    [dots]="true" [loop]="true">
+    <app-tarjeta-libro></app-tarjeta-libro>
+</carousel>
+</div>
+<app-footer></app-footer>

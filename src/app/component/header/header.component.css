@@ -1,0 +1,33 @@
+.header{
+    display:flex;
+    justify-content: space-between;
+    padding: 1em;
+    color:rgb(228, 228, 228);
+    background-color: #474747;
+   
+}
+
+
+
+@media (max-width:1050px) {
+    #nav li a {
+    
+display:block;
+padding:0;
+text-decoration:none;
+width:100px; /* this is the width of the menu items */
+line-height:35px; /* this is the hieght of the menu items */
+ /* list item font color */
+}
+}
+@media (max-width:510px) {
+    #nav li a {
+    
+display:block;
+padding:0;
+text-decoration:none;
+width:80px; /* this is the width of the menu items */
+line-height:35px; /* this is the hieght of the menu items */
+ /* list item font color */
+}
+}

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { LibroService } from 'src/app/shared/libro.service';
+import { Libro } from 'src/app/Models/libro';
+
+
 
 @Component({
   selector: 'app-tarjeta-libro',
@@ -7,9 +11,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarjetaLibroComponent implements OnInit {
 
-  constructor() { }
+  public biblioteca:any;
+  public arrayLibros:Libro[] = [];  
+  @Input() tarjetaPadre!:Libro;
+
+
+  constructor(public libroService:LibroService) {
+    this.libroService = libroService;
+    console.log("entramos al constructor")
+   }
 
   ngOnInit(): void {
+    console.log("iniciamos on init")
+    this.libroService.getAll().subscribe(data => {    
+      this.biblioteca = data;
+      console.log("Biblioteca: ")      
+      console.log(this.biblioteca)
+    })    
   }
 
+  deleteLibro(id_libro:number):void{
+    console.log("delete id: " + id_libro)
+    this.libroService.deleteOne(id_libro).subscribe(data => {
+      console.log("Delete data: ")
+      console.log(data)
+    })
+  }
+ 
 }
+
+
+  
+  
+  
+
+
+

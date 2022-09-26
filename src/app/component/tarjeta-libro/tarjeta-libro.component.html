@@ -1,1 +1,55 @@
-<p>tarjeta-libro works!</p>
+<!-- Tarjeta animada con la información sobre los libros -->
+
+<div class="mainBody" >
+    <div class="contenedorSecundario" *ngFor="let libro of biblioteca">
+    <div class="crudOptions">
+        <ul class="wrapper">
+            <li class="icon edit">
+                <span class="tooltip">Edit</span>
+                <span><i class="edit">&#9998;</i></span>
+            </li>
+            <li class="icon delete">
+                <span class="tooltip">Delete</span>
+                <span><i type="button" class="delete" (click)="deleteLibro(libro.id_libro)">X</i></span>
+            </li>
+        </ul>
+        <!-- <button class="button" id="edit">&#9998;</button>      
+        <button class="button" id="delete">&#11097; </button>          -->
+    </div>
+    <div class="tarjeta" >
+        <div class="tarjetaContenido">
+            <div class="tarjetaFront">
+
+                <div class="tarjetaImg">
+                    <img class="portada" src="{{libro.portada}}">
+                </div>
+                <div class="tarjetaInfo">
+                    <div class="titulo">
+                        {{libro.titulo}}
+                    </div>
+                    <div class="autor">
+                        Autor: {{libro.autor}}
+                    </div>
+                    <div class="editorial">
+                        Editorial: {{libro.editorial}}
+                    </div>
+                    <div class="fechaPublicacion">
+                        Publicación: {{libro.fechaPublicacion}}
+                    </div>
+                    <div class="tapa">
+                        Tapa: {{libro.tapa}}
+                    </div>
+                    <div class="categorias">
+                        categorias: {{libro.categorias}}
+                    </div>
+                </div>
+            </div>
+            <div class="tarjetaBack">
+                <div class="sinapsis">
+                    {{libro.sinapsis}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

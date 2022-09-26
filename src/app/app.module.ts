@@ -7,6 +7,10 @@ import { TarjetaLibroComponent } from './component/tarjeta-libro/tarjeta-libro.c
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { HttpClientModule } from '@angular/common/http';
+import { IvyCarouselModule } from 'angular-responsive-carousel2';
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +18,14 @@ import { LandingComponent } from './pages/landing/landing.component';
     TarjetaLibroComponent,
     HeaderComponent,
     FooterComponent,
-    LandingComponent
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    IvyCarouselModule
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

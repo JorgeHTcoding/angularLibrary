@@ -1,0 +1,149 @@
+.mainBody {
+  display: flex;
+  width: 99vw;
+  height: 100%;
+  border: 2px solid red;
+  padding-top: 45px;
+}
+
+.crudOptions {
+  display: flex;
+  justify-content: flex-end;
+  height: 3.5vh;
+
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+
+.wrapper .edit:hover,
+.wrapper .edit:hover .tooltip,
+.wrapper .edit:hover .tooltip::before {
+  background: #9756ff;
+  color: #ffffff;
+}
+
+.wrapper .delete:hover,
+.wrapper .delete:hover .tooltip,
+.wrapper .delete:hover .tooltip::before {
+  background: #e98c41;
+  color: #ffffff;
+}
+
+.tarjeta {
+
+  padding-left: 3vw;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  width: 300px;
+  height: 600px;
+  perspective: 1000px;
+}
+
+.tarjetaContenido {
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  transition: transform 0.9s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta:hover .tarjetaContenido {
+  transform: rotateY(180deg);
+}
+
+.tarjetaFront,
+.tarjetaBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.tarjetaFront {
+  background-color: #343432;
+  color: white;
+}
+
+.tarjetaBack {
+  background-color: #343432;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* 300 x 330 px */
+.portada {
+  width: 100%;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6b6b69;
+  color: rgb(19, 19, 19)
+}
+
+.tarjetaContenido {
+  display: flex;
+}
+
+.tarjeta {
+  display: flex;
+}
