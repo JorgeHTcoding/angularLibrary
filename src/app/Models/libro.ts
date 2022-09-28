@@ -8,11 +8,12 @@ export class Libro {
     public fechaPublicacion:string;
     public tapa:string;
     public sinapsis:string;
+    public categorias:number[];
 
     
-    constructor(titulo:string,autor:string,portada:string,editorial:string,fechaPublicacion:string,tapa:string,sinapsis:string){
+    constructor(id_libro:number,titulo:string,autor:string,portada:string,editorial:string,fechaPublicacion:string,tapa:string,sinapsis:string,categorias:number[]){
 
-        this.id_libro = 0;
+        this.id_libro = id_libro;
         this.titulo = titulo;
         this.autor = autor;
         this.portada = portada;
@@ -20,6 +21,7 @@ export class Libro {
         this.fechaPublicacion = fechaPublicacion;
         this.tapa = tapa;
         this.sinapsis = sinapsis;
+        this.categorias = categorias;
 
     }
 }

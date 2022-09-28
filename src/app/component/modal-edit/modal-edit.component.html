@@ -1,0 +1,188 @@
+<!-- Tarjeta animada con la información sobre los libros -->
+
+<div class="mainBody">
+
+    <div class="tarjeta">
+        <div class="tarjetaContenido">
+            <div id="openModal" class="modalDialog">
+                <div class="bloqueForm">
+                    <div class="form">
+                        <form #libroForm="ngForm" (ngSubmit)="onSubmit(libroForm)">
+
+                            <label>Lista de libros de la biblioteca:</label>
+                            <ul style=" overflow:hidden; overflow-y:scroll;">
+                                <li *ngFor="let i of biblioteca">{{i.titulo}} </li>
+                            </ul>
+
+
+                            <div class="form-group">
+
+                                <label>Introduce el título del libro a modificar:</label>
+                                <input type="text" name="titulo" class="form-control" [(ngModel)]="libro.titulo"
+                                    #titulo="ngModel"
+                                    [ngClass]="{'is-invalid': (titulo.dirty || titulo.touched) && titulo.invalid }"
+                                    required>
+                                <div *ngIf="(titulo.dirty || titulo.touched) && titulo.invalid "
+                                    class="invalid-feedback">
+                                    <div *ngIf="titulo.errors?.['required']">* Introduce un título</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Autor:</label>
+                                <input type="text" name="autor" class="form-control" [(ngModel)]="libro.autor"
+                                    #autor="ngModel"
+                                    [ngClass]="{'is-invalid': (autor.dirty || autor.touched) && autor.invalid }"
+                                    required>
+                                <div *ngIf="(autor.dirty || autor.touched) && autor.invalid " class="invalid-feedback">
+                                    <div *ngIf="autor.errors?.['required']">* Introduce un autor</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Portada:</label>
+                                <input type="url" name="portada" class="form-control" [(ngModel)]="libro.portada"
+                                    #portada="ngModel"
+                                    [ngClass]="{'is-invalid': (portada.dirty || portada.touched) && portada.invalid }"
+                                    required>
+                                <div *ngIf="(portada.dirty || portada.touched) && portada.invalid "
+                                    class="invalid-feedback">
+                                    <div *ngIf="portada.errors?.['required']">* Introduce una portada</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Editorial:</label>
+                                <input type="text" name="editorial" class="form-control" [(ngModel)]="libro.editorial"
+                                    #editorial="ngModel"
+                                    [ngClass]="{'is-invalid': (editorial.dirty || editorial.touched) && editorial.invalid }"
+                                    required>
+                                <div *ngIf="(editorial.dirty || editorial.touched) && editorial.invalid "
+                                    class="invalid-feedback">
+                                    <div *ngIf="editorial.errors?.['required']">* Introduce una editorial</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Fecha de publicación:</label>
+                                <input type="date" name="fechaPublicacion" class="form-control"
+                                    [(ngModel)]="libro.fechaPublicacion" #fechaPublicacion="ngModel"
+                                    [ngClass]="{'is-invalid': (fechaPublicacion.dirty || fechaPublicacion.touched) && fechaPublicacion.invalid }"
+                                    required>
+                                <div *ngIf="(fechaPublicacion.dirty || fechaPublicacion.touched) && fechaPublicacion.invalid "
+                                    class="invalid-feedback">
+                                    <div *ngIf="fechaPublicacion.errors?.['required']">* Introduce una fecha de
+                                        publicación
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tipo de encuadernación:</label>
+                                <select id="tapa" name="tapa" class="form-control" [(ngModel)]="libro.tapa"
+                                    #tapa="ngModel"
+                                    [ngClass]="{'is-invalid': (tapa.dirty || tapa.touched) && tapa.invalid }" required>
+                                    <option value="Tapa dura">Tapa dura</option>
+                                    <option value="Tapa blanda">Tapa blanda</option>
+                                </select>
+                                <div *ngIf="(tapa.dirty || tapa.touched) && tapa.invalid " class="invalid-feedback">
+                                    <div *ngIf="tapa.errors?.['required']">* Introduce un tipo de encuadernación</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Sinapsis:</label>
+                                <textarea maxlength="800" type="text" name="sinapsis" class="form-control"
+                                    [(ngModel)]="libro.sinapsis" #sinapsis="ngModel"
+                                    [ngClass]="{'is-invalid': (sinapsis.dirty || sinapsis.touched) && sinapsis.invalid }"
+                                    required placeholder="Máximo 800 caracterers"></textarea>
+                                <div *ngIf="(sinapsis.dirty || sinapsis.touched) && sinapsis.invalid "
+                                    class="invalid-feedback">
+                                    <div *ngIf="sinapsis.errors?.['required']">* Introduce una sinapsis</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Selecciona categorías para tú libro.</label>
+                                <div class="checkers">
+                                    <div class="bloqueIzq" name="categorias" class="form-control"
+                                        [(ngModel)]="libro.categorias" #categorias="ngModel"
+                                        [ngClass]="{'is-invalid': (categorias.dirty ||categorias.touched) && categorias.invalid }"
+                                        required>
+                                        <div>
+                                            <input type="radio" id="2" name="2" [(ngModel)]="libro.categorias[0]"
+                                                #2="ngModel" value="2">
+                                            <label for="2">Fantasía</label>
+                                        </div>
+                                        <div>
+                                            <input value="3" type="radio" id="3" name="3"
+                                                [(ngModel)]="libro.categorias[1]" #3="ngModel">
+                                            <label for="3">Ciencia ficción</label>
+                                        </div>
+                                        <div>
+                                            <input value="4" type="radio" id="4" name="4"
+                                                [(ngModel)]="libro.categorias[2]" #4="ngModel">
+                                            <label for="4">Suspense</label>
+                                        </div>
+                                        <div>
+                                            <input value="5" type="radio" id="5" name="5"
+                                                [(ngModel)]="libro.categorias[3]" #5="ngModel">
+                                            <label for="5">Terror</label>
+                                        </div>
+                                        <div>
+                                            <input value="6" type="radio" id="6" name="6"
+                                                [(ngModel)]="libro.categorias[4]" #6="ngModel">
+                                            <label for="6">Comedia</label>
+                                        </div>
+                                        <div>
+                                            <input value="7" type="radio" id="7" name="7"
+                                                [(ngModel)]="libro.categorias[5]" #7="ngModel">
+                                            <label for="7">Romance</label>
+                                        </div>
+                                    </div>
+                                    <div class="bloqueDrch">
+                                        <div>
+                                            <input value="8" type="radio" id="8" name="8"
+                                                [(ngModel)]="libro.categorias[6]" #8="ngModel">
+                                            <label for=8>Drama</label>
+                                        </div>
+                                        <div>
+                                            <input value="9" type="radio" id="9" name="9"
+                                                [(ngModel)]="libro.categorias[7]" #9="ngModel">
+                                            <label for="9">Histórico</label>
+                                        </div>
+                                        <div>
+                                            <input value="10" type="radio" id="10" name="10"
+                                                [(ngModel)]="libro.categorias[8]" #10="ngModel">
+                                            <label for="10">Novela</label>
+                                        </div>
+                                        <div>
+                                            <input value="11" type="radio" id="11" name="11"
+                                                [(ngModel)]="libro.categorias[9]" #11="ngModel">
+                                            <label for="11">Ensayo</label>
+                                        </div>
+                                        <div>
+                                            <input value="12" type="radio" id="12" name="12"
+                                                [(ngModel)]="libro.categorias[10]" #12="ngModel">
+                                            <label for="12">Policiaca</label>
+                                        </div>
+                                        <div>
+                                            <input value="13" type="radio" id="13" name="13"
+                                                [(ngModel)]="libro.categorias[11]" #13="ngModel">
+                                            <label for="13">Picaresca</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <button type="submit" class="colaborar"
+                                    [disabled]="libroForm.invalid">Modificar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

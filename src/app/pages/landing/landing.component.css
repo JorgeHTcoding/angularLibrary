@@ -1,16 +1,78 @@
-.mainBody{
-    height: 85vh;
-    width: 100%;   
-    background-color: #171717;
-  
-}
-
-
+   
 .carouselContainer{
-    border:2px solid blue;
-    display: flex;
-    
+    min-height: 80vh;
+    width: 100%;       
+    display: flex;    
     justify-content: center;
     align-items: center;
+    background: rgb(73,73,73);
+    background: linear-gradient(180deg, rgba(73,73,73,0.665703781512605) 0%, rgba(0,0,0,1) 100%);
     
 }
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15vh;  
+    background-color: #111111;
+    height:170vh;
+    width: 100%;   
+   
+}
+carousel{
+    text-decoration: none;
+}
+
+.bloqueTitulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    color:#e7e7e7;
+}
+.titulo{
+    padding-bottom: 5px;
+    text-align: center;
+}
+.formPut{
+    display:flex;
+    flex-direction: column;
+}
+
+.swapBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    border: none;       
+    height: 4vh;
+    text-decoration: none;     
+    font-size: 1.5em;   
+    background-color: rgb(20, 20, 20); 
+    color: white; 
+    padding:20px;     
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .swapBtn:hover {
+    background-color: white;
+    color: #111111;
+  }
+  
+.bloqueCategorias{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+}
+  .bloquePostCat{
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    background-color: #272727;
+    align-items: center;
+    height: 40vh;
+    width: 100%;
+    
+  }
+ 

@@ -1,0 +1,29 @@
+<div class="bloqueFormPut">
+    <form #categoriaForm="ngForm" (ngSubmit)="onSubmit(categoriaForm)">
+        <div class="dropDown">
+            <label>Escoge una categoría</label>
+            <!-- <p><span>Esta es la categoría seleccionada</span></p>{{selectedCat}}<b></b> -->
+            <select (change)=onSelected($event)>
+                <option *ngFor="let i of listaCat" [ngValue]="i.nombre">
+                    {{i.nombre}}
+                </option>
+            </select>
+
+            <div class="form-group">
+                <label>Introduce un nuevo nombre</label>
+                <input type="text" name="nombre" class="form-control" [(ngModel)]="categoria.nombre" #nombre="ngModel"
+                    [ngClass]="{'is-invalid': (nombre.dirty || nombre.touched) && nombre.invalid }" required>
+                <div *ngIf="(nombre.dirty || nombre.touched) && nombre.invalid " class="invalid-feedback">
+                    <div *ngIf="nombre.errors?.['required']">* Introduce un nombre</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="bloqueBotones">
+                    <button type="submit" class="catModBtn" [disabled]="categoriaForm.invalid">Modificar</button>
+                    <button class="catModBtn" (click)="onDelete()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

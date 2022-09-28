@@ -10,17 +10,21 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class LandingComponent implements OnInit {
   public libroActivo!: Libro;
-  public group:any;
-  public groupShown:any;
+  public group: any;
+  public groupShown: any;
   public itGroup: number = 0;
-  public biblioteca:any;
-  public arrayLibros:Libro[] = [];
-  public libro!:Libro;
-  public imagesForSlider:any;
+  public biblioteca: any;
+  public arrayLibros: Libro[] = [];
+  public libro!: Libro;
+  public imagesForSlider: any;
+  public postDiv: boolean = true;
+  public putDiv: boolean = false;
+  public postCatDiv: boolean = true;
+  public putCatDiv: boolean = false;
 
   // slides:any;
   // slideConfig = { slidesToShow: 1, slidesToScroll: 1 };
- 
+
   // removeSlide() {
   //   this.slides.length = this.slides.length - 1;
   // }
@@ -37,23 +41,43 @@ export class LandingComponent implements OnInit {
   //   console.log('beforeChange');
   // }
 
-  constructor(public libroService:LibroService) {  
+  constructor(public libroService: LibroService) {
     this.libroService = libroService;
     console.log("entramos al constructor")
+    
   }
 
-  ngOnInit(): void {    
+  
+
+  ngOnInit(): void {
     console.log("iniciamos on init")
-    this.libroService.getAll().subscribe(data => {  
-            
-      this.imagesForSlider = data;      
-      console.log("Group: ")      
+    this.libroService.getAll().subscribe(data => {
+
+      this.imagesForSlider = data;
+      console.log("Group: ")
       console.log(this.imagesForSlider)
-      
-    
-    })  
-  
-  
+
+
+    })
+
+  }
+  public hidePost() {
+    this.postDiv = false;
+    this.putDiv = true;
+
+  }
+  public hidePut() {
+    this.postDiv = true;
+    this.putDiv = false;
+  }
+  public hidePostCat() {
+    this.postCatDiv = false;
+    this.putCatDiv = true;
+
+  }
+  public hidePutCat() {
+    this.postCatDiv = true;
+    this.putCatDiv = false;
   }
 
 

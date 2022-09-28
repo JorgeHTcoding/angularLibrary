@@ -1,0 +1,64 @@
+
+.dropDown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bloqueBotones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 15vw;
+}
+label{
+    padding:10px;
+}
+.catModBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    border: none;       
+    height: 4vh;
+    min-width:100px ;
+    text-decoration: none; 
+    font-size: 1.2em;   
+    background-color: rgb(20, 20, 20); 
+    color: white; 
+    padding:10px;     
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .catModBtn:hover {
+    background-color: white;
+    color: #111111;
+  }
+
+  @media (max-width:1500px) {
+    .bloqueBotones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+@media (max-width:510px) {
+    .bloqueBotones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+}
+  }

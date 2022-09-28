@@ -18,17 +18,40 @@ export class LibroService {
   getOne(id_libro:number):Observable<Object>{
     console.log("Entramos a getOne libro con id: ")
     console.log(id_libro)
-    this.url="http://localhost:3000/libro?id_libro=" + id_libro
-    return this.http.get(this.url)
+    this.url="http://localhost:3000/libro?id_libro=" + id_libro;
+    return this.http.get(this.url);
   }  
 
+  getLibroSeleccionado(titulo:string):Observable<Object>{
+    this.url="http://localhost:3000/libro";
+    return this.http.post<string>(this.url,titulo);
+  }
+  // Obtenemos todos los libros
+
   getAll():Observable<Object>{
-    this.url="http://localhost:3000/libro"
-    return this.http.get(this.url)
+    this.url="http://localhost:3000/libro";
+    return this.http.get(this.url);
+  }
+  
+  // Creamos una entrada de libro
+
+  postOne(libro:Libro):Observable<Object>{
+    this.url="http://localhost:3000/libro";
+    return this.http.post<Libro>(this.url,libro);
   }
 
-  deleteOne(id_libro:number):Observable<Object>{
-    this.url="http://localhost:3000/libro?id_libro=" + id_libro
-    return this.http.delete(this.url)
+  // Editamos una entrada de libro
+
+  editOne(libro:Libro):Observable<Object>{
+    this.url="http://localhost:3000/libro";
+    return this.http.put<Libro>(this.url,libro);
   }
+
+  // Eliminamos una entrada de libro con su id
+
+  deleteOne(id_libro:number):Observable<Object>{
+    this.url="http://localhost:3000/libro?id_libro=" + id_libro;
+    return this.http.delete(this.url);
+  }
+
   }
