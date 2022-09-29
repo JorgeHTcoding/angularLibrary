@@ -27,7 +27,7 @@ export class LandingComponent implements OnInit {
 
   constructor(public libroService: LibroService) {
     this.libroService = libroService;
-    console.log("entramos al constructor")
+    
   }
 
   ngOnInit(): void {
@@ -40,8 +40,8 @@ export class LandingComponent implements OnInit {
 
     this.libroService.getAll().subscribe(data => {
       this.imagesForSlider = data;
-      console.log("Group: ")
-      console.log(this.imagesForSlider)
+      console.log("Data recovered")
+      
     })
 
   }

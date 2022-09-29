@@ -10,21 +10,18 @@ import { CategoriaService } from 'src/app/shared/categoria.service';
   styleUrls: ['./formulario-nueva-categoria.component.css']
 })
 export class FormularioNuevaCategoriaComponent implements OnInit {
-  public categoria:Categoria;
-  public myForm!:FormGroup; 
- 
-  constructor(private categoriaService:CategoriaService) { 
-    this.categoria = new Categoria(0,"");
+  public categoria: Categoria;
+  public myForm!: FormGroup;
+
+  constructor(private categoriaService: CategoriaService) {
+    this.categoria = new Categoria(0, "");
   }
-  public onSubmit(form:NgForm){   
-     
-    this.categoriaService.postOne(this.categoria).subscribe((data:any) => {         
-            
-      console.log("Form values: ")
-      console.log(form.value)
-      console.log("Post data: ")
-      console.log(data)
-    })  
+  public onSubmit(form: NgForm) {
+
+    this.categoriaService.postOne(this.categoria).subscribe((data: any) => {
+
+      console.log("Data saved")
+    })
   }
   ngOnInit(): void {
   }

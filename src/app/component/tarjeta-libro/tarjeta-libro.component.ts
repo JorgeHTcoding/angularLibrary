@@ -18,23 +18,22 @@ export class TarjetaLibroComponent implements OnInit {
 
   constructor(public libroService:LibroService) {
     this.libroService = libroService;
-    console.log("entramos al constructor")
+    
    }
 
   ngOnInit(): void {
-    console.log("iniciamos on init")
+    
     this.libroService.getAll().subscribe(data => {    
       this.biblioteca = data;
-      console.log("Biblioteca: ")      
-      console.log(this.biblioteca)
+      console.log("Data recovered")
     })    
   }
 
   deleteLibro(id_libro:number):void{
     console.log("delete id: " + id_libro)
     this.libroService.deleteOne(id_libro).subscribe(data => {
-      console.log("Delete data: ")
-      console.log(data)
+      console.log("Data deleted")
+      
     })
   }
  

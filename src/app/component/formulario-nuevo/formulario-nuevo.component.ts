@@ -12,26 +12,21 @@ import { FormGroup, NgForm } from '@angular/forms';
 })
 export class FormularioNuevoComponent implements OnInit {
 
-  public libro:Libro;
-  public myForm!:FormGroup; 
-  public arrayNum:number[] = [];
+  public libro: Libro;
+  public myForm!: FormGroup;
+  public arrayNum: number[] = [];
 
-  constructor(private libroService:LibroService) {
-    this.libro = new Libro(0,"","","","","","","",this.arrayNum)
-    
-   }
+  constructor(private libroService: LibroService) {
+    this.libro = new Libro(0, "", "", "", "", "", "", "", this.arrayNum)
 
-  public onSubmit(form:NgForm){   
-     
-    this.libroService.postOne(this.libro).subscribe((data:any) => {         
-      
-      console.log("form.value.categorias: ")
-      console.log(form.value.categorias)
-      console.log("Form values: ")
-      console.log(form.value)
-      console.log("Post data: ")
-      console.log(data)
-    })  
+  }
+
+  public onSubmit(form: NgForm) {
+
+    this.libroService.postOne(this.libro).subscribe((data: any) => {
+
+      console.log("Data saved")
+    })
   }
   ngOnInit(): void {
   }
