@@ -187,7 +187,10 @@ textarea{
     display: flex;
     justify-content: space-between;
   }
-   
+  .disclaimer{
+    color:#868686;
+    padding-top:3px;
+  }
  ul{
     background-color: #272727;
     color:#e7e7e7;

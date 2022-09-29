@@ -1,4 +1,4 @@
-<div class="mainBody">       
+<div class="mainBody">
     <div id="openModal" class="modalDialog">
         <div class="bloqueForm">
 
@@ -9,8 +9,9 @@
                         <label>Título:</label>
                         <input type="text" name="titulo" class="form-control" [(ngModel)]="libro.titulo"
                             #titulo="ngModel"
-                            [ngClass]="{'is-invalid': (titulo.dirty || titulo.touched) && titulo.invalid }" required placeholder="Titulo del libro">
-                        <div *ngIf="(titulo.dirty || titulo.touched) && titulo.invalid " class="invalid-feedback" >
+                            [ngClass]="{'is-invalid': (titulo.dirty || titulo.touched) && titulo.invalid }" required
+                            placeholder="Titulo del libro">
+                        <div *ngIf="(titulo.dirty || titulo.touched) && titulo.invalid " class="invalid-feedback">
                             <div *ngIf="titulo.errors?.['required']">* Introduce un título</div>
                         </div>
                     </div>
@@ -18,7 +19,8 @@
                     <div class="form-group">
                         <label>Autor:</label>
                         <input type="text" name="autor" class="form-control" [(ngModel)]="libro.autor" #autor="ngModel"
-                            [ngClass]="{'is-invalid': (autor.dirty || autor.touched) && autor.invalid }" required placeholder="Autor del libro">
+                            [ngClass]="{'is-invalid': (autor.dirty || autor.touched) && autor.invalid }" required
+                            placeholder="Autor del libro">
                         <div *ngIf="(autor.dirty || autor.touched) && autor.invalid " class="invalid-feedback">
                             <div *ngIf="autor.errors?.['required']">* Introduce un autor</div>
                         </div>
@@ -28,7 +30,8 @@
                         <label>Portada:</label>
                         <input type="url" name="portada" class="form-control" [(ngModel)]="libro.portada"
                             #portada="ngModel"
-                            [ngClass]="{'is-invalid': (portada.dirty || portada.touched) && portada.invalid }" required placeholder="Introduce una url a imagen">
+                            [ngClass]="{'is-invalid': (portada.dirty || portada.touched) && portada.invalid }" required
+                            placeholder="Introduce una url a imagen">
                         <div *ngIf="(portada.dirty || portada.touched) && portada.invalid " class="invalid-feedback">
                             <div *ngIf="portada.errors?.['required']">* Introduce una portada</div>
                         </div>
@@ -62,7 +65,7 @@
                     <div class="form-group">
                         <label>Tipo de encuadernación:</label>
                         <select id="tapa" name="tapa" class="form-control" [(ngModel)]="libro.tapa" #tapa="ngModel"
-                            [ngClass]="{'is-invalid': (tapa.dirty || tapa.touched) && tapa.invalid }" required >
+                            [ngClass]="{'is-invalid': (tapa.dirty || tapa.touched) && tapa.invalid }" required>
                             <option value="Tapa dura">Tapa dura</option>
                             <option value="Tapa blanda">Tapa blanda</option>
                         </select>
@@ -89,7 +92,10 @@
                     Es estático ahora mismo, a la hora de añadir categorías debería reflejarse en la vista todas las que hay a través del uso de por ejemplo el
                     uso de un dropdown con selector multiple (no lo hice con el default de html de mantener pulsado ctrl porque se me hace un poco arcaico), no
                     he usado librerías ya que tengo la version 14 de Angular y pocas de ellas son compatibles todavía, si no hubiera límite de tiempo volvería a alguna
-                    versión anterior para poder usarlas
+                    versión anterior para poder usarlas.
+
+                    Es interesante también contemplar la incorporación de modales para las confirmaciones y recarga de la págin y el uso de arrays en el front 
+                    para meter los datos de los libros y que no tenga que hacerse un this.ngOnInit para ello.
                     -->
 
                     <div class="form-group">
@@ -167,6 +173,7 @@
                     <div class="form-group">
 
                         <button type="submit" class="colaborar" [disabled]="libroForm.invalid">Colaborar</button>
+                        <p class="disclaimer">Rellena todos los datos para poder enviar el libro</p>
 
                     </div>
                 </form>

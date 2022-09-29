@@ -8,7 +8,7 @@ import { Libro } from '../Models/libro';
 })
 export class LibroService {
 
-  public url:string = "https://api-tek-library.herokuapp.com";
+  public url:string = "http://api-tek-library.herokuapp.com";
   public libro!:Libro;
 
   constructor(public http:HttpClient) { }
