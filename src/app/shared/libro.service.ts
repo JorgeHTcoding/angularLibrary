@@ -6,6 +6,9 @@ import { Libro } from '../Models/libro';
 @Injectable({
   providedIn: 'root'
 })
+
+//Está lista para hacer despliegue en heroku solo falta cambiar los endpoints
+
 export class LibroService {
 
   public url:string = "http://localhost:3000";
