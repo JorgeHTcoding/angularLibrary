@@ -28,6 +28,17 @@
 .enlace{
     padding-left: 25px;
 }
+.enlace:hover {
+  
+    color: #777777;
+    float:up;
+    margin-bottom:10px !important;
+    /* -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out; */
+    transition: all 0.2s ease-out;
+  }
 
 @media (max-width:1050px) {
     #nav li a {    

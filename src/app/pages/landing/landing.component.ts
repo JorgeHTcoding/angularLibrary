@@ -17,47 +17,31 @@ export class LandingComponent implements OnInit {
   public arrayLibros: Libro[] = [];
   public libro!: Libro;
   public imagesForSlider: any;
+  public carouselDiv: boolean = false;
+  public carouselBtn: boolean = true;
   public postDiv: boolean = true;
   public putDiv: boolean = false;
   public postCatDiv: boolean = true;
   public putCatDiv: boolean = false;
 
-  // slides:any;
-  // slideConfig = { slidesToShow: 1, slidesToScroll: 1 };
-
-  // removeSlide() {
-  //   this.slides.length = this.slides.length - 1;
-  // }
-  // slickInit(e: any) {
-  //   console.log('slick initialized');
-  // }
-  // breakpoint(e: any) {
-  //   console.log('breakpoint');
-  // }
-  // afterChange(e: any) {
-  //   console.log('afterChange');
-  // }
-  // beforeChange(e: any) {
-  //   console.log('beforeChange');
-  // }
 
   constructor(public libroService: LibroService) {
     this.libroService = libroService;
     console.log("entramos al constructor")
-    
   }
 
-  
-
   ngOnInit(): void {
-    console.log("iniciamos on init")
-    this.libroService.getAll().subscribe(data => {
 
+  }
+
+  public showCarousel() {
+    this.carouselBtn = false;
+    this.carouselDiv = true;
+
+    this.libroService.getAll().subscribe(data => {
       this.imagesForSlider = data;
       console.log("Group: ")
       console.log(this.imagesForSlider)
-
-
     })
 
   }

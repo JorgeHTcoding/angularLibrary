@@ -9,7 +9,7 @@
                         <label>Categoría:</label>
                         <input type="text" name="titulo" class="form-control" [(ngModel)]="categoria.nombre"
                             #titulo="ngModel"
-                            [ngClass]="{'is-invalid': (titulo.dirty || titulo.touched) && titulo.invalid }" required>
+                            [ngClass]="{'is-invalid': (titulo.dirty || titulo.touched) && titulo.invalid }" required placeholder="Nombre de la categoría">
                         <div *ngIf="(titulo.dirty || titulo.touched) && titulo.invalid " class="invalid-feedback">
                             <div *ngIf="titulo.errors?.['required']">* Introduce categoría</div>
                         </div>

@@ -36,6 +36,8 @@ export class TarjetaLibroComponent implements OnInit {
       console.log("Delete data: ")
       console.log(data)
     })
+    this.ngOnInit();
+    
   }
  
 }

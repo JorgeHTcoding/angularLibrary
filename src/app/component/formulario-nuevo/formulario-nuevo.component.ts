@@ -11,7 +11,8 @@ import { FormGroup, NgForm } from '@angular/forms';
   styleUrls: ['./formulario-nuevo.component.css']
 })
 export class FormularioNuevoComponent implements OnInit {
-
+  public show=true;
+  public modalActualizado:boolean=false;
   public libro:Libro;
   public myForm!:FormGroup; 
   public arrayNum:number[] = [];
@@ -32,6 +33,7 @@ export class FormularioNuevoComponent implements OnInit {
       console.log("Post data: ")
       console.log(data)
     })  
+    this.ngOnInit();
   }
   ngOnInit(): void {
   }

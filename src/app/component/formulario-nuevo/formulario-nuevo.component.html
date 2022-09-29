@@ -1,4 +1,4 @@
-<div class="mainBody">   
+<div class="mainBody">       
     <div id="openModal" class="modalDialog">
         <div class="bloqueForm">
 
@@ -9,8 +9,8 @@
                         <label>Título:</label>
                         <input type="text" name="titulo" class="form-control" [(ngModel)]="libro.titulo"
                             #titulo="ngModel"
-                            [ngClass]="{'is-invalid': (titulo.dirty || titulo.touched) && titulo.invalid }" required>
-                        <div *ngIf="(titulo.dirty || titulo.touched) && titulo.invalid " class="invalid-feedback">
+                            [ngClass]="{'is-invalid': (titulo.dirty || titulo.touched) && titulo.invalid }" required placeholder="Titulo del libro">
+                        <div *ngIf="(titulo.dirty || titulo.touched) && titulo.invalid " class="invalid-feedback" >
                             <div *ngIf="titulo.errors?.['required']">* Introduce un título</div>
                         </div>
                     </div>
@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label>Autor:</label>
                         <input type="text" name="autor" class="form-control" [(ngModel)]="libro.autor" #autor="ngModel"
-                            [ngClass]="{'is-invalid': (autor.dirty || autor.touched) && autor.invalid }" required>
+                            [ngClass]="{'is-invalid': (autor.dirty || autor.touched) && autor.invalid }" required placeholder="Autor del libro">
                         <div *ngIf="(autor.dirty || autor.touched) && autor.invalid " class="invalid-feedback">
                             <div *ngIf="autor.errors?.['required']">* Introduce un autor</div>
                         </div>
@@ -28,7 +28,7 @@
                         <label>Portada:</label>
                         <input type="url" name="portada" class="form-control" [(ngModel)]="libro.portada"
                             #portada="ngModel"
-                            [ngClass]="{'is-invalid': (portada.dirty || portada.touched) && portada.invalid }" required>
+                            [ngClass]="{'is-invalid': (portada.dirty || portada.touched) && portada.invalid }" required placeholder="Introduce una url a imagen">
                         <div *ngIf="(portada.dirty || portada.touched) && portada.invalid " class="invalid-feedback">
                             <div *ngIf="portada.errors?.['required']">* Introduce una portada</div>
                         </div>
@@ -39,7 +39,7 @@
                         <input type="text" name="editorial" class="form-control" [(ngModel)]="libro.editorial"
                             #editorial="ngModel"
                             [ngClass]="{'is-invalid': (editorial.dirty || editorial.touched) && editorial.invalid }"
-                            required>
+                            required placeholder="Editorial del libro">
                         <div *ngIf="(editorial.dirty || editorial.touched) && editorial.invalid "
                             class="invalid-feedback">
                             <div *ngIf="editorial.errors?.['required']">* Introduce una editorial</div>
@@ -62,7 +62,7 @@
                     <div class="form-group">
                         <label>Tipo de encuadernación:</label>
                         <select id="tapa" name="tapa" class="form-control" [(ngModel)]="libro.tapa" #tapa="ngModel"
-                            [ngClass]="{'is-invalid': (tapa.dirty || tapa.touched) && tapa.invalid }" required>
+                            [ngClass]="{'is-invalid': (tapa.dirty || tapa.touched) && tapa.invalid }" required >
                             <option value="Tapa dura">Tapa dura</option>
                             <option value="Tapa blanda">Tapa blanda</option>
                         </select>

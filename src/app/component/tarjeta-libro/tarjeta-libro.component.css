@@ -91,10 +91,17 @@
   flex-direction: column;
   background-color: transparent;
   width: 300px;
-  height: 600px;
+  height: 650px;
   perspective: 1000px;
 }
-
+.tarjetaImg{
+  height: 455px;
+  max-height: 455px;
+}
+img{
+  height: 455px;
+  max-height: 455px;
+}
 .tarjetaContenido {
 
   position: relative;
@@ -128,8 +135,23 @@
   background-color: #343432;
   color: white;
   transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding:15px;
+  font-size: 1.2rem;
 }
-
+.spacer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #171717;
+  width: 100%;
+  height: 4vh;
+  background-color: #6b6b69;
+}
 /* 300 x 330 px */
 .portada {
   width: 100%;
@@ -139,16 +161,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 4vh;
   background-color: #6b6b69;
-  color: rgb(19, 19, 19)
+  color: rgb(255, 255, 255);
+  margin-bottom:5px;
 }
 
 .tarjetaContenido {
   display: flex;
+  width: 100%;
 }
 
-.tarjeta {
+.tarjetaInfo {
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center ;
+}
+.info{
+  padding: 2px;
+  text-align: center;
 }
 
 @media (max-width: 1500px) {

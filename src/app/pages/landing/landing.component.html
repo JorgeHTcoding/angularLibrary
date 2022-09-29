@@ -1,21 +1,22 @@
 <app-header></app-header>
-<div class="carouselContainer">
+<div class="carouselContainer" id="bibliotecaView">
     <carousel [images]="imagesForSlider" [arrows]="false" [cellWidth]="'100%'" [height]="800" [autoplay]="false"
-        [lightDOM]="true" [overflowCellsLimit]="3" [freeScroll]="true">
+        [lightDOM]="true" [overflowCellsLimit]="3" [freeScroll]="true" *ngIf="carouselDiv">
         <app-tarjeta-libro></app-tarjeta-libro>.
     </carousel>
+    <button class="swapBtnCrs" (click)="showCarousel()" *ngIf="carouselBtn">Biblioteca</button>
 </div>
-
+<div class="bloqueGeneral">
 <div class="bloqueLibros">
     <div class="formContainer">
         <div clas="bloquePost" *ngIf="postDiv">
-            <div class="bloqueTitulo">
+            <div class="bloqueTitulo" id="colaborarView">
                 <h2 class="titulo">Colabora con nosotros</h2>
                 <p>Introduce todos los datos para poder subir un libro</p>
                 <p>Haz click debajo para modificar algún libro ya existente</p>
                 <button class="swapBtn" (click)="hidePost()">Editar libro</button>
             </div>
-            <div>
+            <div >
                 <app-formulario-nuevo></app-formulario-nuevo>
             </div>
         </div>
@@ -30,28 +31,28 @@
                 </div>
             </div>
         </div>
-        <div class="bloqueCategorias">
-            <div class="bloquePostCat" *ngIf="postCatDiv">
-                <div class="formPut">
-                    <div class="bloqueTitulo">
-                        <h2 class="titulo">Añade una categoría</h2>
-                        <p>¿Crees que nos falta alguna categoría? </p>
-                        <p>Haz click debajo para editar las categorías</p>
-                        <button class="swapBtn" (click)="hidePostCat()">Editar categorías</button>
-                        <app-formulario-nueva-categoria></app-formulario-nueva-categoria>
-                    </div>
-                </div>
+    </div>
+</div>
+<div class="bloqueCategorias">
+    <div class="bloquePostCat" *ngIf="postCatDiv">
+        <div class="formPut">
+            <div class="bloqueTitulo2">
+                <h2 class="titulo2">Añade una categoría</h2>
+                <p>¿Crees que nos falta alguna categoría? </p>
+                <p>Haz click debajo para editar las categorías</p>
+                <button class="swapBtn" (click)="hidePostCat()">Editar categorías</button>
+                <app-formulario-nueva-categoria></app-formulario-nueva-categoria>
             </div>
-            <div class="bloquePostCat" *ngIf="putCatDiv">
-                <div class="formPut">
-                    <div class="bloqueTitulo">
-                        <h2 class="titulo">Edita una categoría</h2>
-                        <p>Edita o elimina la categoría</p>
-                        <p>Haz click debajo para añadir una categoría</p>
-                        <button class="swapBtn" (click)="hidePutCat()">Añadir categoría</button>
-                        <app-modal-edit-categoria></app-modal-edit-categoria>
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="bloquePostCat" *ngIf="putCatDiv">
+        <div class="formPut">
+            <div class="bloqueTitulo">
+                <h2 class="titulo">Edita una categoría</h2>
+                <p>Edita o elimina la categoría</p>
+                <p>Haz click debajo para añadir una categoría</p>
+                <button class="swapBtn" (click)="hidePutCat()">Añadir categoría</button>
+                <app-modal-edit-categoria></app-modal-edit-categoria>
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@
             <div class="form-group">
                 <label>Introduce un nuevo nombre</label>
                 <input type="text" name="nombre" class="form-control" [(ngModel)]="categoria.nombre" #nombre="ngModel"
-                    [ngClass]="{'is-invalid': (nombre.dirty || nombre.touched) && nombre.invalid }" required>
+                    [ngClass]="{'is-invalid': (nombre.dirty || nombre.touched) && nombre.invalid }" required placeholder="Nuevo nombre">
                 <div *ngIf="(nombre.dirty || nombre.touched) && nombre.invalid " class="invalid-feedback">
                     <div *ngIf="nombre.errors?.['required']">* Introduce un nombre</div>
                 </div>

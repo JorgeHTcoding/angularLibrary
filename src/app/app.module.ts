@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TarjetaLibroComponent } from './component/tarjeta-libro/tarjeta-libro.component';
 import { HeaderComponent } from './component/header/header.component';
-import { FooterComponent } from './component/footer/footer.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IvyCarouselModule } from 'angular-responsive-carousel2';
@@ -20,18 +19,18 @@ import { ModalEditCategoriaComponent } from './component/modal-edit-categoria/mo
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     TarjetaLibroComponent,
-    HeaderComponent,
-    FooterComponent,
+    HeaderComponent,   
     LandingComponent,
     FormularioNuevoComponent,
     ModalEditComponent,
     FormularioNuevaCategoriaComponent,
     ModalEditCategoriaComponent,
-    
+   
     
     
     
