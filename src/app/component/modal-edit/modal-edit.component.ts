@@ -13,7 +13,7 @@ export class ModalEditComponent implements OnInit {
   public myForm!: FormGroup;
   public biblioteca: any; 
   public arrayNum:number[] = [];
-
+  public libroCargado!:Libro;
   
 
 
