@@ -18,7 +18,7 @@ export class LibroService {
   getOne(id_libro:number):Observable<Object>{
     console.log("Entramos a getOne libro con id: ")
     console.log(id_libro)
-    this.url="http://localhost:3000/libro?id_libro=" + id_libro;
+    this.url="https://api-tek-library.herokuapp.com/libro?id_libro=" + id_libro;
     return this.http.get(this.url);
   }  
 

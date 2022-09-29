@@ -95,10 +95,7 @@
                     <div class="form-group">
                         <label>Selecciona categorías para tú libro.</label>
                         <div class="checkers">
-                            <div class="bloqueIzq" name="categorias" class="form-control" [(ngModel)]="libro.categorias"
-                                #categorias="ngModel"
-                                [ngClass]="{'is-invalid': (categorias.dirty ||categorias.touched) && categorias.invalid }"
-                                required>
+                            <div class="bloqueIzq" name="categorias" class="form-control">
                                 <div>
                                     <input type="radio" id="2" name="2" [(ngModel)]="libro.categorias[0]" #2="ngModel"
                                         value="2">
