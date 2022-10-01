@@ -1,27 +1,22 @@
-# AngularLibrary
+Breve guía de descarga y conexión para la prueba de nivel de Jorge Holgado Torres.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+1º. Clonar los dos repositorios de gitHub de las siguientes direcciones:
 
-## Development server
+App Angular - https://github.com/JorgeHTcoding/angularLibrary
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+API - https://github.com/JorgeHTcoding/apiLibrary
 
-## Code scaffolding
+Han sido divididas para mayor claridad a la hora de trabajar. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2º Guardar ambos clones en la misma carpeta.
+3º Ejecutar Visual Studio Code (preferiblemente ya que se desarrolló en el mismo pero puede usarse cualquier editor de código) y abrir la carpeta raiz 
+donde están los dos archivos descargados.
+5º Abril terminal integrado en: /apiLibrary/src/apiRest.js (botón derecho y abrir terminal integrado en VS Code) y ejecutar el comando node apiRest.js
+ (Esto nos ejecutara la API para la comunicación con el servidor)
+4º Abril terminal integrado en: /angularLibrary/src/app (botón derecho y abrir terminal integrado en VS Code) y ejecutar el comando ng serve --open
+ (Esto nos ejecutara la app de angular en nuestro explorador)
 
-## Build
+La app está lista para desplegar en heroku pero debido a unos problemas con la política de origen cruzado de CORS no ha sido posible un despliegue efectivo
+con respecto a la comunicación con el servidor y sigo investigando para solucionarlo.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Muchas gracias por la oportunidad y el tiempo dedicado.
